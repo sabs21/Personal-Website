@@ -1,12 +1,20 @@
 import React from 'react'
 import NavLink from "./NavLink.js"
+import DarkModeToggle from "../DarkModeToggle.js"
 
 const Nav = () => {
     return (
-        <div className="relative flex flex-row justify-start items-center h-20 w-full bg-orange-500 shadow-md px-6">
-            <NavLink to="/" text="Home" />
-            <span className="relative inline-block w-4"></span>
-            <NavLink to="/minecraft" text="Minecraft" />
+        <div className="relative flex flex-row justify-between items-center h-20 w-full bg-orange-500 dark:bg-orange-800 shadow-md px-6">
+            {/* Left side of the nav bar. Holds links. */}
+            <span>
+                <NavLink to="/" text="Home" />
+                <span className="relative inline-block w-4"></span>
+                <NavLink to="/minecraft" text="Minecraft" />
+            </span>
+            {/* Right side of the nav bar. Contains the dark mode switch. */}
+            <span>
+                <DarkModeToggle />
+            </span>
         </div>
     )
 }

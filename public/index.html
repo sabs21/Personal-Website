@@ -29,6 +29,15 @@
       The stylesheet above allows tailwind CSS to be used 
     -->
     <title>Nick Sabia's Portfolio</title>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+    <!-- The script above checks which color mode the webpage was last set to (dark vs light) and changes it accordingly -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
