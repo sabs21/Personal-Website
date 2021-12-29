@@ -50,7 +50,8 @@ const Floor = (props) => {
 
 const MinecraftBlock = ({className}) => {
   const { darkMode } = useContext(DarkModeContext)
-  const fogColor = darkMode ? "#1D0C0A" : "#F9EFED";
+  const fogColor = darkMode ? "#0A1A1D" : "#EDF8F9";
+  const intensity = darkMode ? 2 : 1;
   return (
     <div className={className}>
       <Canvas 
@@ -64,7 +65,8 @@ const MinecraftBlock = ({className}) => {
         <ambientLight intensity={0.1} />
         <spotLight 
           position={[5, 20, 5]} 
-          angle={0.14} 
+          angle={0.14}
+          intensity={intensity}
           penumbra={1} 
           castShadow={true} 
         />

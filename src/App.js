@@ -13,7 +13,7 @@ function App() {
   return (
     <DarkModeContextProvider>
       <Router>
-        <div className="bg-redsand-50 dark:bg-redsand-900">
+        <div className="bg-fadedsky-50 dark:bg-fadedsky-900">
           <Nav />
           <Routes>
             <Route path="/" element={<Home />}></Route>
