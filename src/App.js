@@ -10,7 +10,7 @@ import Minecraft from "./pages/Minecraft.js"
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="bg-redsand-50 dark:bg-redsand-900">
         <Nav />
         <Routes>
           <Route path="/" element={<Home />}></Route>
