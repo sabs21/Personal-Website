@@ -37,9 +37,7 @@ const Box = (props) => {
   );
 }
 
-const Floor = (props) => {
-  //const mesh = useRef();
-
+const Floor = () => {
   return (
     <mesh castShadow={true} receiveShadow={true} rotation={[-Math.PI/2, 0, 0]} position={[0, -1.25, 0]}>
       <planeBufferGeometry attach="geometry" args={[500, 500]} />
