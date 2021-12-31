@@ -1,7 +1,7 @@
 // Scrolls whatever is within it from left to right infinitely
 import { useState, useEffect, useRef } from "react";
 
-const Scroller = ({ children, gap }) => {
+const Scroller = ({ children, gap, speed, reverse }) => {
     // We only need to care about ther elements on the ends.
     // If the left-most item's left side is greater than -10px, then spawn a new item on the left.
     // Alternatively, calculate how many items I can fit in the scrolling bar, then add two more (ne on each end). Then, when the left-most item gets to 0, shift all items to the left by the item width.
@@ -9,11 +9,24 @@ const Scroller = ({ children, gap }) => {
     const [itemWidth, setItemWidth] = useState(0);
     const containerRef = useRef(null);
     const itemRef = useRef(null);
-    let spacing = gap;
-    let spacingStyling = { marginLeft: `${spacing / 2}px`, marginRight: `${spacing / 2}px` };
 
+    let spacing = gap; // float
+    let spacingStyling = { marginLeft: `${spacing / 2}px`, marginRight: `${spacing / 2}px` };
     if (spacing === undefined || spacing < 0 || Number.isNaN(spacing)) {
         spacing = 0;
+    }
+
+    let animSpeed = speed; // float
+    if (spacing === undefined || spacing < 0 || Number.isNaN(spacing)) {
+        animSpeed = 1;
+    } else {
+        // Now we know that animSpeed is a valid number, so recalculate it as the reciprocol of the slowest speed. This allows for higher numbers to mean higher speeds.
+        animSpeed = 10 / animSpeed;
+    }
+
+    let animDirection = "left";
+    if (reverse) {
+        animDirection = "right";
     }
 
     const appendItems = () => {
@@ -75,21 +88,24 @@ const Scroller = ({ children, gap }) => {
             <style>{`
                 .animatedScroller {
                     animation-name: scrollLeft;
-                    animation-duration: 3s;
+                    animation-duration: ${animSpeed}s;
                     animation-iteration-count: infinite;
+                    animation-timing-function: linear;
                 }
                 @keyframes scrollLeft {
                     from {
-                      transform: translateX(0px);
+                      transform: translateX(${animDirection === "left" ? -1 * (itemWidth + spacing) : 0}px);
                     }
-                  
                     to {
-                      transform: translateX(${itemWidth + spacing});
+                      transform: translateX(${animDirection === "left" ? 0 : -1 * (itemWidth + spacing)}px);
                     }
                 }
             `}</style>
             <div ref={containerRef} className="relative block w-full h-full whitespace-nowrap overflow-hidden">
-                <div className="animatedScroller relative block w-full h-full whitespace-nowrap overflow-hidden">
+                <div
+                    className="animatedScroller relative block w-full h-full whitespace-nowrap"
+                    style={{ transform: `translateX(-${itemWidth + spacing}px)` }}
+                >
                     <span key={0} ref={itemRef} className="relative inline-block w-auto" style={spacingStyling}>
                         {children}
                     </span>
