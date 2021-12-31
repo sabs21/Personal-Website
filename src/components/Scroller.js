@@ -81,6 +81,7 @@ const Scroller = ({ children, gap, speed, reverse }) => {
     }, []); //empty dependency array so it only runs once at render
 
     console.log(containerWidth + " | " + itemWidth);
+    console.log("itemWidth and spacing calculation", -1 * (itemWidth + spacing));
 
     // I may need to randomize the animation name for it to work.
     return (
