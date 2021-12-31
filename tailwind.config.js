@@ -35,6 +35,10 @@ module.exports = {
         800: '#173F44',
         900: '#0A1A1D',
       }
+    },
+    fontFamily: {
+      'display': ['Exo'],
+      'body': ['Barlow']
     }
   },
   plugins: [],

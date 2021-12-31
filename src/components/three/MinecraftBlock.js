@@ -1,23 +1,21 @@
-import React, { useRef, useMemo, useContext } from "react";
+import React, { useRef, useMemo, useContext, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 import diamond from "./assets/diamond-block-texture.png";
 import { DarkModeContext } from "../DarkModeContext";
 
+// Handles cube movement without re-rendering the scene
+const pos = new THREE.Vector2();
+
 const Box = (props) => {
   // This reference will give us direct access to the mesh
   const mesh = useRef();
-  //mesh.current.rotation.y = -1;
-  ///mesh.current.rotation.x = 0.6;
-
-  // Set up state for the hovered and active state 
-  //const [active, setActive] = useState(false);
 
   // Rotate mesh every frame, this is outside of React without overhead
   useFrame(({clock}) => {
-    //mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
-    mesh.current.position.y = Math.sin(clock.getElapsedTime()) / 16;
+    mesh.current.position.y = Math.sin(clock.getElapsedTime()) / 12;
+    mesh.current.rotation.y = pos.x;
   });
   
   const texture = useMemo(() => new THREE.TextureLoader().load(diamond), []);
@@ -26,8 +24,9 @@ const Box = (props) => {
     <mesh
         {...props}
         ref={mesh}
-        scale={[1.8, 1.8, 1.8]}
-        castShadow={true} receiveShadow={true}
+        scale={[1.7, 1.7, 1.7]}
+        castShadow={true} 
+        receiveShadow={true}
     >
       <boxBufferGeometry args={[1, 1, 1]} />
       <meshStandardMaterial attach="material" side={THREE.FrontSide}>
@@ -50,8 +49,14 @@ const MinecraftBlock = ({className}) => {
   const { darkMode } = useContext(DarkModeContext)
   const fogColor = darkMode ? "#0A1A1D" : "#EDF8F9";
   const intensity = darkMode ? 2 : 1;
+  const handleMouseMove = (e) => {
+    // Normalize the position of the mouse in the element
+    pos.x = e.clientX / e.target.width;
+    pos.y = e.clientY / e.target.height;
+  }
+
   return (
-    <div className={className}>
+    <div className={className} onMouseMove={handleMouseMove}>
       <Canvas 
         colorManagement 
         shadows 

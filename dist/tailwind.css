@@ -423,19 +423,63 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 *, ::before, ::after {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+
+.-mt-60 {
+  margin-top: -15rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
 }
 
 .mt-4 {
@@ -444,6 +488,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.ml-7 {
+  margin-left: 1.75rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
 }
 
 .block {
@@ -470,8 +522,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 2.5rem;
 }
 
+.h-full {
+  height: 100%;
+}
+
+.h-72 {
+  height: 18rem;
+}
+
 .h-20 {
   height: 5rem;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
+.h-32 {
+  height: 8rem;
 }
 
 .h-12 {
@@ -494,8 +562,33 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: auto;
 }
 
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.transform {
+  -webkit-transform: var(--tw-transform);
+          transform: var(--tw-transform);
+}
+
+.list-decimal {
+  list-style-type: decimal;
+}
+
 .flex-row {
   flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-center {
@@ -510,13 +603,27 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: space-between;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.bg-fadedsky-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(237 248 249 / var(--tw-bg-opacity));
 }
 
 .bg-redsand-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(192 85 70 / var(--tw-bg-opacity));
+}
+
+.bg-fadedsky-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(70 177 192 / var(--tw-bg-opacity));
 }
 
 .fill-current {
@@ -527,9 +634,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 0.5rem;
 }
 
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .px-6 {
@@ -537,9 +644,23 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1.5rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.text-center {
+  text-align: center;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-xl {
@@ -547,24 +668,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.75rem;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .text-gray-100 {
   --tw-text-opacity: 1;
   color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
-.text-gray-900 {
+.text-fadedsky-800 {
   --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
+  color: rgb(23 63 68 / var(--tw-text-opacity));
 }
 
-.text-gray-800 {
+.text-fadedsky-500 {
   --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
+  color: rgb(70 177 192 / var(--tw-text-opacity));
 }
 
-.text-redsand-100 {
+.text-fadedsky-100 {
   --tw-text-opacity: 1;
-  color: rgb(243 223 221 / var(--tw-text-opacity));
+  color: rgb(221 241 243 / var(--tw-text-opacity));
 }
 
 .shadow-md {
@@ -595,9 +720,481 @@ code {
     monospace;
 }
 
-.hover\:text-redsand-50:hover {
+/* Barlow Font */
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-BlackItalic.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-BlackItalic.woff') format('woff');
+
+  font-weight: 900;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-Black.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-Black.woff') format('woff');
+
+  font-weight: 900;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-ExtraBoldItalic.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-ExtraBoldItalic.woff') format('woff');
+
+  font-weight: bold;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-BoldItalic.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-BoldItalic.woff') format('woff');
+
+  font-weight: bold;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-ExtraLight.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-ExtraLight.woff') format('woff');
+
+  font-weight: 200;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-ExtraBold.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-ExtraBold.woff') format('woff');
+
+  font-weight: bold;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-Bold.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-Bold.woff') format('woff');
+
+  font-weight: bold;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-LightItalic.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-LightItalic.woff') format('woff');
+
+  font-weight: 300;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-MediumItalic.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-MediumItalic.woff') format('woff');
+
+  font-weight: 500;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-Medium.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-Medium.woff') format('woff');
+
+  font-weight: 500;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-Italic.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-Italic.woff') format('woff');
+
+  font-weight: normal;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-Light.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-Light.woff') format('woff');
+
+  font-weight: 300;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-ExtraLightItalic.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-ExtraLightItalic.woff') format('woff');
+
+  font-weight: 200;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-Thin.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-Thin.woff') format('woff');
+
+  font-weight: 100;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-Regular.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-Regular.woff') format('woff');
+
+  font-weight: normal;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-ThinItalic.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-ThinItalic.woff') format('woff');
+
+  font-weight: 100;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-SemiBoldItalic.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-SemiBoldItalic.woff') format('woff');
+
+  font-weight: 600;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+
+  src: url('fonts/Barlow/Barlow-SemiBold.woff2') format('woff2'),
+        url('fonts/Barlow/Barlow-SemiBold.woff') format('woff');
+
+  font-weight: 600;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+/* Exo Font */
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-BlackItalic.woff2') format('woff2'),
+        url('fonts/Exo/Exo-BlackItalic.woff') format('woff');
+
+  font-weight: 900;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-Black.woff2') format('woff2'),
+        url('fonts/Exo/Exo-Black.woff') format('woff');
+
+  font-weight: 900;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-Bold.woff2') format('woff2'),
+        url('fonts/Exo/Exo-Bold.woff') format('woff');
+
+  font-weight: bold;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-ExtraBold.woff2') format('woff2'),
+        url('fonts/Exo/Exo-ExtraBold.woff') format('woff');
+
+  font-weight: bold;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-BoldItalic.woff2') format('woff2'),
+        url('fonts/Exo/Exo-BoldItalic.woff') format('woff');
+
+  font-weight: bold;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-ExtraLightItalic.woff2') format('woff2'),
+        url('fonts/Exo/Exo-ExtraLightItalic.woff') format('woff');
+
+  font-weight: 200;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-ExtraBoldItalic.woff2') format('woff2'),
+        url('fonts/Exo/Exo-ExtraBoldItalic.woff') format('woff');
+
+  font-weight: bold;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-ExtraLight.woff2') format('woff2'),
+        url('fonts/Exo/Exo-ExtraLight.woff') format('woff');
+
+  font-weight: 200;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-LightItalic.woff2') format('woff2'),
+        url('fonts/Exo/Exo-LightItalic.woff') format('woff');
+
+  font-weight: 300;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-Medium.woff2') format('woff2'),
+        url('fonts/Exo/Exo-Medium.woff') format('woff');
+
+  font-weight: 500;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-Italic.woff2') format('woff2'),
+        url('fonts/Exo/Exo-Italic.woff') format('woff');
+
+  font-weight: normal;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-Light.woff2') format('woff2'),
+        url('fonts/Exo/Exo-Light.woff') format('woff');
+
+  font-weight: 300;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-SemiBoldItalic.woff2') format('woff2'),
+        url('fonts/Exo/Exo-SemiBoldItalic.woff') format('woff');
+
+  font-weight: 600;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-MediumItalic.woff2') format('woff2'),
+        url('fonts/Exo/Exo-MediumItalic.woff') format('woff');
+
+  font-weight: 500;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-Regular.woff2') format('woff2'),
+        url('fonts/Exo/Exo-Regular.woff') format('woff');
+
+  font-weight: normal;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-SemiBold.woff2') format('woff2'),
+        url('fonts/Exo/Exo-SemiBold.woff') format('woff');
+
+  font-weight: 600;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-ThinItalic.woff2') format('woff2'),
+        url('fonts/Exo/Exo-ThinItalic.woff') format('woff');
+
+  font-weight: 100;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo';
+
+  src: url('fonts/Exo/Exo-Thin.woff2') format('woff2'),
+        url('fonts/Exo/Exo-Thin.woff') format('woff');
+
+  font-weight: 100;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+.hover\:text-fadedsky-50:hover {
   --tw-text-opacity: 1;
-  color: rgb(249 239 237 / var(--tw-text-opacity));
+  color: rgb(237 248 249 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {
@@ -605,12 +1202,37 @@ code {
           text-decoration-line: underline;
 }
 
-.dark .dark\:bg-redsand-800 {
+.dark .dark\:bg-fadedsky-900 {
   --tw-bg-opacity: 1;
-  background-color: rgb(68 29 23 / var(--tw-bg-opacity));
+  background-color: rgb(10 26 29 / var(--tw-bg-opacity));
 }
 
-.dark .dark\:text-gray-200 {
+.dark .dark\:bg-fadedsky-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 63 68 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:text-fadedsky-200 {
   --tw-text-opacity: 1;
-  color: rgb(229 231 235 / var(--tw-text-opacity));
+  color: rgb(189 227 232 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .md\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }

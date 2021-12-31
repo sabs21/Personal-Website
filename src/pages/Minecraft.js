@@ -20,7 +20,7 @@ const Minecraft = () => {
                         <path d="M878,677Q782,854,618.5,775.5Q455,697,257.5,704.5Q60,712,61,500.5Q62,289,227,157.5Q392,26,590,82.5Q788,139,881,319.5Q974,500,878,677Z"></path>
                     </clipPath>
                 </defs>
-                <image transform="matrix(.0043655 0 0 .0043655 -.26628 -.28603)" clip-path="url(#shape)" href={image}/>
+                <image transform="matrix(.0043655 0 0 .0043655 -.26628 -.28603)" clipPath="url(#shape)" href={image}/>
             </svg>
         )
     }
@@ -39,16 +39,16 @@ const Minecraft = () => {
                         <path d="m865 664.5q-36 164.5-200.5 168t-308.5-20.5-195.5-168 25.5-262.5 195.5-154 282.5-45.5 200.5 154 0.5 328.5z" fill="currentColor"/>
                     </clipPath>
                 </defs>
-                <image transform="matrix(.0050867 0 0 .0050867 -.71143 -.92286)" clip-path="url(#a)" href={image}/>
+                <image transform="matrix(.0050867 0 0 .0050867 -.71143 -.92286)" clipPath="url(#a)" href={image}/>
             </svg>
         )
     }
 
     return (
-        <div className="text-fadedsky-800 dark:text-fadedsky-200">
+        <div className="text-fadedsky-800 dark:text-fadedsky-200 font-body">
             <MinecraftBlock className="relative block rounded-lg z-0 w-full h-72" />
-            <div style={{background: `linear-gradient(${gradientColor}, transparent)`, marginTop: "-1px"}} className="relative block h-20 w-full"></div>
-            <h1 className="absolute block w-full text-center text-4xl md:text-7xl font-bold -mt-60">Witcher's Modpack</h1>
+            <div style={{background: `linear-gradient(${gradientColor}, transparent)`, marginTop: "-1px"}} className="relative block h-20 w-full font-display"></div>
+            <h1 className="absolute block w-full text-center text-4xl md:text-7xl font-bold -mt-60 pointer-events-none">Witcher's Modpack</h1>
             <div className="px-20 mt-5">
                 <div className="relative flex w-full h-96 flex-col md:flex-row mb-12 md:mb-0">
                     <span className="flex-1 flex flex-col justify-center items-start mb-4 md:mb-0">
@@ -84,7 +84,7 @@ const Minecraft = () => {
                 </ol>
                 <h3 className="text-xl mt-3 mb-2">Installation Instructions</h3>
                 <ol className="list-decimal">
-                    <li className="ml-7">Make sure you've installed forge. Simply run the forge jar file obtained from the website and install the forge client (not the server).</li>
+                    <li className="ml-7">Make sure you've installed forge by running the forge installation jar file obtained from the forge website and installing the forge client (not the server).</li>
                     <li className="ml-7">Navigate to your <b>.minecraft</b> folder. (For Windows: Searching %appdata% in the Windows search will lead you to the folder.)</li>
                     <li className="ml-7">Extract <b>mods.zip</b> and drag the mods folder into the .minecraft folder. Make sure there isn't a mods folder nested within the mods folder.</li>
                     <li className="ml-7">Extract <b>config.zip</b> and drag the defaultconfig and config folders into the .minecraft folder. Again, make sure to avoid nested folders.</li>
