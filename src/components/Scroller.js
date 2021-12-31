@@ -9,6 +9,7 @@ const Scroller = ({ children, gap, speed, reverse }) => {
     const [itemWidth, setItemWidth] = useState(0);
     const containerRef = useRef(null);
     const itemRef = useRef(null);
+    const uniqueId = Math.floor(Math.random() * 999999);
 
     let spacing = gap; // float
     let spacingStyling = { marginLeft: `${spacing / 2}px`, marginRight: `${spacing / 2}px` };
@@ -21,7 +22,7 @@ const Scroller = ({ children, gap, speed, reverse }) => {
         animSpeed = 1;
     } else {
         // Now we know that animSpeed is a valid number, so recalculate it as the reciprocol of the slowest speed. This allows for higher numbers to mean higher speeds.
-        animSpeed = 10 / animSpeed;
+        animSpeed = 20 / animSpeed;
     }
 
     let animDirection = "left";
@@ -29,6 +30,7 @@ const Scroller = ({ children, gap, speed, reverse }) => {
         animDirection = "right";
     }
 
+    // Add as many items as can fit onto the scroller.
     const appendItems = () => {
         if (containerWidth <= 0 || itemWidth <= 0) {
             console.warn("Unable to scroll items. Either containerWidth = 0 or itemWidth = 0.");
@@ -80,20 +82,20 @@ const Scroller = ({ children, gap, speed, reverse }) => {
         });
     }, []); //empty dependency array so it only runs once at render
 
-    console.log(containerWidth + " | " + itemWidth);
-    console.log("itemWidth and spacing calculation", -1 * (itemWidth + spacing));
+    //console.log(containerWidth + " | " + itemWidth);
+    //console.log("itemWidth and spacing calculation", -1 * (itemWidth + spacing));
 
     // I may need to randomize the animation name for it to work.
     return (
         <>
             <style>{`
-                .animatedScroller {
-                    animation-name: scrollLeft;
+                .animatedScroller_${uniqueId} {
+                    animation-name: scroller_${uniqueId};
                     animation-duration: ${animSpeed}s;
                     animation-iteration-count: infinite;
                     animation-timing-function: linear;
                 }
-                @keyframes scrollLeft {
+                @keyframes scroller_${uniqueId} {
                     from {
                       transform: translateX(${animDirection === "left" ? -1 * (itemWidth + spacing) : 0}px);
                     }
@@ -104,7 +106,7 @@ const Scroller = ({ children, gap, speed, reverse }) => {
             `}</style>
             <div ref={containerRef} className="relative block w-full h-full whitespace-nowrap overflow-hidden">
                 <div
-                    className="animatedScroller relative block w-full h-full whitespace-nowrap"
+                    className={`animatedScroller_${uniqueId} relative block w-full h-full whitespace-nowrap`}
                     style={{ transform: `translateX(-${itemWidth + spacing}px)` }}
                 >
                     <span key={0} ref={itemRef} className="relative inline-block w-auto" style={spacingStyling}>
