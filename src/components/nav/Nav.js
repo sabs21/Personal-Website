@@ -4,7 +4,7 @@ import DarkModeToggle from "../DarkModeToggle.js"
 
 const Nav = () => {
     return (
-        <div className="relative flex flex-row justify-between items-center h-20 w-full bg-fadedsky-500 dark:bg-fadedsky-800 shadow-md px-6 z-50">
+        <div className="relative flex flex-row justify-between items-center h-20 w-full bg-fadedsky-500 dark:bg-fadedsky-800 shadow-md px-6 z-50 font-body font-medium">
             {/* Left side of the nav bar. Holds links. */}
             <span>
                 <NavLink to="/" text="Home" />
