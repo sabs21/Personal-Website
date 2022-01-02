@@ -3,7 +3,12 @@ import Hero from "../components/Hero";
 import { DarkModeContext } from "../components/DarkModeContext";
 
 const Home = () => {
-    return <Hero />;
+    return (
+        <>
+            <Hero />
+            <div></div>
+        </>
+    );
 };
 
 export default Home;
