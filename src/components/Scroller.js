@@ -30,41 +30,38 @@ const Scroller = ({ children, gap, speed, reverse }) => {
         animDirection = "right";
     }
 
-    // Add as many items as can fit onto the scroller.
-    const appendItems = () => {
+    // Calculates how many items are just enough to fill the container width-wise. This does not take into consideration any rotations applied.
+    const findOptimalAmountOfItems = (containerWidth, itemWidth, spacing) => {
         if (containerWidth <= 0 || itemWidth <= 0) {
-            console.warn("Unable to scroll items. Either containerWidth = 0 or itemWidth = 0.");
-            return;
+            console.warn("Unable to find optimal amount of items to fit. Either containerWidth = 0 or itemWidth = 0.");
+            return 0;
         }
-        // Edge cases: item width = 0, container width = 0;
-        let elements = [];
-        let key = 1; // NOTE: Key "starts" at 1 here since there is already an element which will begin with key 0.
-        // Populate scroller with as many items as will fit (and then two more).
-        // We subtract one from the available width right away since there will always be at least one item in the scroller.
+
+        let items = 2; // We need at least 3 items in the scroller to achieve the desired scrolling effect. We already have the reference item, so we just add 2 items here to ensure we reach the needed 3 items.
         for (
             let availableWidth = containerWidth - (itemWidth + spacing);
             availableWidth > 0;
             availableWidth -= itemWidth + spacing
         ) {
-            elements[key] = (
+            items++;
+        }
+        //console.log("items", items);
+        return items;
+    };
+
+    // Add as many items as can fit onto the scroller.
+    const appendItems = (containerWidth, itemWidth, spacing) => {
+        let elements = [];
+        let key = 1; // NOTE: Key "starts" at 1 here since there is already an element which will begin with key 0.
+        // Populate scroller with as many items as will fit (and then two more).
+        // We subtract one from the available width right away since there will always be at least one item in the scroller.
+        for (let totalItems = findOptimalAmountOfItems(containerWidth, itemWidth, spacing); key <= totalItems; key++) {
+            elements.push(
                 <span key={key} className="relative inline-block w-auto" style={spacingStyling}>
                     {children}
                 </span>
             );
-            key++;
         }
-
-        // Add these to ensure that we have at least three items.
-        elements[key] = (
-            <span key={key} className="relative inline-block w-auto" style={spacingStyling}>
-                {children}
-            </span>
-        );
-        elements[key + 1] = (
-            <span key={key + 1} className="relative inline-block w-auto" style={spacingStyling}>
-                {children}
-            </span>
-        );
 
         return elements;
     };
@@ -72,13 +69,17 @@ const Scroller = ({ children, gap, speed, reverse }) => {
     // Handle calculation of widths upon load and upon resizing
     useEffect(() => {
         // Set initial widths
-        setContainerWidth(containerRef.current.getBoundingClientRect().width);
-        setItemWidth(itemRef.current.getBoundingClientRect().width);
+        setContainerWidth(containerRef.current.offsetWidth);
+        setItemWidth(itemRef.current.offsetWidth);
+        //console.log("containerRef width", containerRef.current.offsetWidth);
+        //console.log("itemRef width", itemRef.current.offsetWidth);
 
         // On resize, recalculate width
         window.addEventListener("resize", (e) => {
-            setContainerWidth(containerRef.current.getBoundingClientRect().width);
-            setItemWidth(itemRef.current.getBoundingClientRect().width);
+            setContainerWidth(containerRef.current.offsetWidth);
+            setItemWidth(itemRef.current.offsetWidth);
+            //console.log("containerRef width", containerRef.current.offsetWidth);
+            //console.log("itemRef width", itemRef.current.offsetWidth);
         });
     }, []); //empty dependency array so it only runs once at render
 
@@ -112,7 +113,7 @@ const Scroller = ({ children, gap, speed, reverse }) => {
                     <span key={0} ref={itemRef} className="relative inline-block w-auto" style={spacingStyling}>
                         {children}
                     </span>
-                    {appendItems()}
+                    {appendItems(containerWidth, itemWidth, spacing)}
                 </div>
             </div>
         </>
