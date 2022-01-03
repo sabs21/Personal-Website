@@ -9,11 +9,12 @@ const Home = () => {
     const TiltedDivider1 = () => {
         return (
             <svg
-                className="relative block fill-current text-fadedsky-50 dark:text-fadedsky-900"
+                className="relative block fill-current text-fadedsky-50 dark:text-fadedsky-900 w-full"
+                version="1.1"
+                viewBox="0 0 1440 100"
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1440 320"
             >
-                <path d="M0,32L1440,128L1440,320L0,320Z"></path>
+                <path d="m0 0.069106 1440 96v3.9986h-1440z" />
             </svg>
         );
     };
@@ -312,7 +313,7 @@ const Home = () => {
                 <g
                     transform="matrix(.013857 0 0 .013857 1.0884 .049446)"
                     fill-rule="evenodd"
-                    stroke="#000"
+                    stroke={darkMode ? "#EDF8F9" : "#0A1A1D"}
                     stroke-linecap="butt"
                     stroke-linejoin="round"
                     stroke-width="4"
@@ -347,83 +348,85 @@ const Home = () => {
     return (
         <>
             <Hero />
-            <div className="absolute block -mt-40 w-full h-auto">{TiltedDivider1()}</div>
-            <div className="relative block z-10 px-40 py-10">
-                <h1 className="relative block text-7xl font-display font-bold text-fadedsky-900 dark:text-fadedsky-50">
-                    I am a...
-                </h1>
-                <h2 className="relative block text-5xl font-display font-bold text-fadedsky-900 dark:text-fadedsky-50 mt-10 mb-4">
-                    Full Stack Web Developer
-                </h2>
-                <p className="text-lg font-body text-fadedsky-900 dark:text-fadedsky-50">
-                    I started my coding journey in the field of web development, and have no plans of stopping. I have 3
-                    years of web development experience with 2 of those years being in the industry. I've worked on
-                    various websites, and nearly all had different tech stacks. This versatility allows me to adjust to
-                    the tools I use quicker to best fulfill a project's requirements.
-                </p>
-                <h3 className="relative block text-3xl font-display font-bold text-fadedsky-900 dark:text-fadedsky-50 mt-6 mb-4">
-                    Languages &amp; Technologies
-                </h3>
-                <i className="relative block text-lg font-body text-fadedsky-600 dark:text-fadedsky-300 mb-4">
-                    Hover over each card to learn more about my proficiencies...
-                </i>
-                <div className="relative flex justify-between items-center flex-wrap">
-                    <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
-                        <TextDisplayCard
-                            title="React"
-                            text="I first began using React when I helped work on SplashDash (an analytics tool for marketing agencies) during my time at Develomark. My portfolio website is built using React and is my library of choice."
-                        >
-                            {ReactIcon()}
-                        </TextDisplayCard>
-                    </span>
-                    <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
-                        <TextDisplayCard
-                            title="HTML/CSS/Javascript"
-                            text="The classic trifecta. JavaScript was the first language I had ever learned. Before I moved onto any frameworks, I mastered these three things to give me a solid foundation to build upon. I've written websites using vanilla HTML/CSS/JavaScript mostly for experimentation as well as for some assignments."
-                        >
-                            {TrifectaIcon()}
-                        </TextDisplayCard>
-                    </span>
-                    <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
-                        <TextDisplayCard
-                            title="PHP/MySQL"
-                            text="When handling server-side requests on an Apache server, PHP is my go-to purely for its speed. I've used PHP and MySQL when I built a search engine and crawler for Develomark. I also made a mock security forum for my Computer Security course using PHP and MySQL."
-                        >
-                            {PHPMySQLLogo()}
-                        </TextDisplayCard>
-                    </span>
-                    <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
-                        <TextDisplayCard
-                            title="Java"
-                            text="I was taught Java throughout the Computer Science Honors program at CCSU. My most notable Java project was for my Design Patterns course where I worked with 2 others to build a discord racing bot. The bot allows you to race other people in the server and lets you buy, upgrade, and repair cars."
-                        >
-                            {JavaLogo()}
-                        </TextDisplayCard>
-                    </span>
-                    <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
-                        <TextDisplayCard
-                            title="C#"
-                            text="For my Game Development course, I worked with 3 others to create a game in Unity (which uses C# for scripting). The game we created is a rougelike called Planetary Doom and can be found on itch.io. I wrote the final boss and upgrade system logic for the game."
-                        >
-                            {CSharpLogo()}
-                        </TextDisplayCard>
-                    </span>
-                    <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
-                        <TextDisplayCard
-                            title="Three.JS/GLSL"
-                            text="I recreated a scene on the docks of Nantucket based on the memories I had there. I had to make custom shaders with GLSL for the flame in the hurricane lantern. The rest was a lot of modelling and texturing using Blender."
-                        >
-                            {ThreeGLSLLogo()}
-                        </TextDisplayCard>
-                    </span>
-                    <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
-                        <TextDisplayCard
-                            title="C"
-                            text="For my Systems Programming course, I recreated snake in C using the ncurses library for graphics."
-                        >
-                            {CLogo()}
-                        </TextDisplayCard>
-                    </span>
+            <div className="-mt-32">
+                <div className="relative block w-full h-auto">{TiltedDivider1()}</div>
+                <div className="relative block z-10 px-10 md:px-40 py-10 bg-fadedsky-50 dark:bg-fadedsky-900">
+                    <h1 className="relative block text-7xl font-display font-bold text-fadedsky-900 dark:text-fadedsky-50">
+                        I am a...
+                    </h1>
+                    <h2 className="relative block text-5xl font-display font-bold text-fadedsky-900 dark:text-fadedsky-50 mt-10 mb-4">
+                        Full Stack Web Developer
+                    </h2>
+                    <p className="text-lg font-body text-fadedsky-900 dark:text-fadedsky-50">
+                        I started my coding journey in the field of web development, and have no plans of stopping. I
+                        have 3 years of web development experience with 2 of those years being in the industry. I've
+                        worked on various websites, and nearly all had different tech stacks. This versatility allows me
+                        to adjust to the tools I use quicker to best fulfill a project's requirements.
+                    </p>
+                    <h3 className="relative block text-3xl font-display font-bold text-fadedsky-900 dark:text-fadedsky-50 mt-6 mb-4">
+                        Languages &amp; Technologies
+                    </h3>
+                    <i className="relative block text-lg font-body text-fadedsky-600 dark:text-fadedsky-300 mb-4">
+                        Hover over each card to learn more about my proficiencies...
+                    </i>
+                    <div className="relative flex justify-center lg:justify-between items-center flex-wrap">
+                        <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
+                            <TextDisplayCard
+                                title="React"
+                                text="I first began using React when I helped work on SplashDash (an analytics tool for marketing agencies) during my time at Develomark. My portfolio website is built using React and is my library of choice."
+                            >
+                                {ReactIcon()}
+                            </TextDisplayCard>
+                        </span>
+                        <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
+                            <TextDisplayCard
+                                title="HTML/CSS/Javascript"
+                                text="The classic trifecta. JavaScript was the first language I had ever learned. Before I moved onto any frameworks, I mastered these three things to give me a solid foundation to build upon. I've written websites using vanilla HTML/CSS/JavaScript mostly for experimentation as well as for some assignments."
+                            >
+                                {TrifectaIcon()}
+                            </TextDisplayCard>
+                        </span>
+                        <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
+                            <TextDisplayCard
+                                title="PHP/MySQL"
+                                text="When handling server-side requests on an Apache server, PHP is my go-to purely for its speed. I've used PHP and MySQL when I built a search engine and crawler for Develomark. I also made a mock security forum for my Computer Security course using PHP and MySQL."
+                            >
+                                {PHPMySQLLogo()}
+                            </TextDisplayCard>
+                        </span>
+                        <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
+                            <TextDisplayCard
+                                title="Java"
+                                text="I was taught Java throughout the Computer Science Honors program at CCSU. My most notable Java project was for my Design Patterns course where I worked with 2 others to build a discord racing bot. The bot allows you to race other people in the server and lets you buy, upgrade, and repair cars."
+                            >
+                                {JavaLogo()}
+                            </TextDisplayCard>
+                        </span>
+                        <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
+                            <TextDisplayCard
+                                title="C#"
+                                text="For my Game Development course, I worked with 3 others to create a game in Unity (which uses C# for scripting). The game we created is a rougelike called Planetary Doom and can be found on itch.io. I wrote the final boss and upgrade system logic for the game."
+                            >
+                                {CSharpLogo()}
+                            </TextDisplayCard>
+                        </span>
+                        <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
+                            <TextDisplayCard
+                                title="Three.JS/GLSL"
+                                text="I recreated a scene on the docks of Nantucket based on the memories I had there. I had to make custom shaders with GLSL for the flame in the hurricane lantern. The rest was a lot of modelling and texturing using Blender."
+                            >
+                                {ThreeGLSLLogo()}
+                            </TextDisplayCard>
+                        </span>
+                        <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
+                            <TextDisplayCard
+                                title="C"
+                                text="For my Systems Programming course, I recreated snake in C using the ncurses library for graphics."
+                            >
+                                {CLogo()}
+                            </TextDisplayCard>
+                        </span>
+                    </div>
                 </div>
             </div>
         </>

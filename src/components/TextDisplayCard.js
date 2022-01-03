@@ -8,9 +8,12 @@ const TextDisplayCard = ({ children, title, text }) => {
     const handleLeave = () => {
         setHovered(false);
     };
+    const handleClick = () => {
+        setHovered(!hovered);
+    };
 
     return (
-        <span onMouseEnter={handleHover} onMouseLeave={handleLeave}>
+        <span onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={handleClick}>
             <div className="relative w-full h-auto p-2 text-center text-2xl font-display font-medium z-10 bg-fadedsky-900 dark:bg-fadedsky-100 dark:text-fadedsky-900 text-fadedsky-100 rounded-t-xl">
                 {title}
             </div>
