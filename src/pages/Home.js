@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useContext } from "react";
-import Hero from "../components/Hero";
+import Hero from "../components/hero/Hero";
 import { DarkModeContext } from "../components/DarkModeContext";
 
 const Home = () => {
