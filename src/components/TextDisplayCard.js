@@ -27,7 +27,7 @@ const TextDisplayCard = ({ children, title, text }) => {
                 <p
                     className={`absolute ${
                         hovered ? "opacity-100" : "opacity-0"
-                    } z-0 text-fadedsky-900 dark:text-fadedsky-50 top-0 left-0 w-full h-80 mt-11 py-6 px-6 transition-opacity text-lg overflow-auto`}
+                    } z-0 text-fadedsky-900 dark:text-fadedsky-50 top-0 left-0 w-full h-80 mt-11 py-6 px-6 transition-opacity text-lg overflow-auto pointer-events-none`}
                 >
                     {text}
                 </p>

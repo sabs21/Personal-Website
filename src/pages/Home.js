@@ -355,13 +355,13 @@ const Home = () => {
                         I am a...
                     </h1>
                     <h2 className="relative block text-5xl font-display font-bold text-fadedsky-900 dark:text-fadedsky-50 mt-10 mb-4">
-                        Full Stack Web Developer
+                        Full Stack Web Developer &amp; Software Engineer
                     </h2>
                     <p className="text-lg font-body text-fadedsky-900 dark:text-fadedsky-50">
-                        I started my coding journey in the field of web development, and have no plans of stopping. I
+                        My coding journey began in the field of web development and has since snowballed. I currently
                         have 3 years of web development experience with 2 of those years being in the industry. I've
                         worked on various websites, and nearly all had different tech stacks. This versatility allows me
-                        to adjust to the tools I use quicker to best fulfill a project's requirements.
+                        to quickly adjust to the tools I need to best fulfill a project's requirements.
                     </p>
                     <h3 className="relative block text-3xl font-display font-bold text-fadedsky-900 dark:text-fadedsky-50 mt-6 mb-4">
                         Languages &amp; Technologies
@@ -389,7 +389,7 @@ const Home = () => {
                         <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
                             <TextDisplayCard
                                 title="PHP/MySQL"
-                                text="When handling server-side requests on an Apache server, PHP is my go-to purely for its speed. I've used PHP and MySQL when I built a search engine and crawler for Develomark. I also made a mock security forum for my Computer Security course using PHP and MySQL."
+                                text="When handling server-side requests on an Apache server, PHP is my go-to purely for its speed. I've used PHP and MySQL to build a search engine + crawler and a task tracking Chrome extension for Develomark. I also made a mock security forum for my Computer Security course using PHP and MySQL."
                             >
                                 {PHPMySQLLogo()}
                             </TextDisplayCard>
@@ -428,6 +428,11 @@ const Home = () => {
                         </span>
                     </div>
                 </div>
+            </div>
+            <div className="relative block z-10 px-10 md:px-40 py-10 bg-fadedsky-50 dark:bg-fadedsky-900">
+                <h1 className="relative block text-7xl font-display font-bold text-fadedsky-900 dark:text-fadedsky-50">
+                    Projects
+                </h1>
             </div>
         </>
     );
