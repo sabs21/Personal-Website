@@ -22,7 +22,7 @@ const Home = () => {
         return (
             <svg
                 enableBackground="new 0 0 841.9 595.3"
-                className="mt-12"
+                className="mt-5"
                 version="1.1"
                 viewBox="0 0 841.9 595.3"
                 xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ const Home = () => {
 
     const TrifectaIcon = () => {
         return (
-            <svg className="relative block m-auto max-h-80 pt-8 mt-2" version="1.1" viewBox="0 0 6 6">
+            <svg className="relative block m-auto max-h-80 p-8" version="1.1" viewBox="0 0 6 6">
                 <path
                     d="m1.9291 3.5421 3.377e-4 0.027021c1.862e-4 0.014862 0.043241 0.50691 0.095681 1.0934l0.095343 1.0664 0.42852 0.11998c0.23569 0.065988 0.43339 0.12031 0.43933 0.12073 0.0059441 4.166e-4 0.20625-0.05336 0.44514-0.1195 0.38299-0.10605 0.4347-0.12202 0.43744-0.13515 0.0038208-0.018289 0.19137-2.1341 0.19118-2.1567l-1.373e-4 -0.016212h-1.0664z"
                     fill="#fff"
@@ -107,7 +107,7 @@ const Home = () => {
 
     const PHPMySQLLogo = () => {
         return (
-            <svg className="relative block m-auto h-80 mt-6" version="1.1" viewBox="0 0 4 3.9999999">
+            <svg className="relative block m-auto h-80 p-6" version="1.1" viewBox="0 0 4 3.9999999">
                 <defs>
                     <clipPath id="d">
                         <path d="m11.52 162c0-80.323 123.79-145.44 276.48-145.44s276.48 65.116 276.48 145.44c0 80.322-123.79 145.44-276.48 145.44s-276.48-65.117-276.48-145.44" />
@@ -203,6 +203,43 @@ const Home = () => {
         );
     };
 
+    const JavaLogo = () => {
+        return (
+            <svg
+                className="p-10 w-full h-full"
+                version="1.1"
+                viewBox="-43.6242 -135.2265 0.78765919 4.056795"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="m-42.274-132.1h-0.0144v-8e-3h0.0389v8e-3h-0.0144v0.0403h-0.0101zm0.0775 2e-3h-2.2e-4l-0.0143 0.0382h-7e-3l-0.0142-0.0382h-1.7e-4v0.0382h-0.01v-0.0484h0.014l0.0132 0.0343 0.0131-0.0343h0.0139v0.0484h-9e-3v-0.0382zm-1.3703-0.99154s-0.10047 0.0584 0.0715 0.0782c0.20835 0.0238 0.31483 0.0204 0.54443-0.0231 0 0 0.0604 0.0378 0.14467 0.0706-0.5147 0.2206-1.1649-0.0128-0.7606-0.12573m-0.0629-0.28786s-0.1127 0.0834 0.0594 0.10122c0.22256 0.023 0.39832 0.0248 0.70246-0.0337 0 0 0.0421 0.0426 0.10821 0.066-0.6223 0.18197-1.3154 0.0144-0.87008-0.13346"
+                    fill="#5382a1"
+                    stroke-width=".0070866"
+                />
+                <path
+                    d="m-43.099-133.87c0.12682 0.14602-0.0333 0.27741-0.0333 0.27741s0.32202-0.16624 0.17413-0.37441c-0.13812-0.19413-0.24405-0.29058 0.32938-0.62315 0 0-0.90009 0.2248-0.47019 0.72015"
+                    fill="#f8981d"
+                    stroke-width=".0070866"
+                />
+                <path
+                    d="m-42.418-132.88s0.0744 0.0613-0.0819 0.10866c-0.2971 0.09-1.2365 0.11718-1.4975 4e-3 -0.0938-0.0408 0.0821-0.0975 0.13745-0.10933 0.0577-0.0125 0.0907-0.0102 0.0907-0.0102-0.10433-0.0735-0.67434 0.14431-0.28954 0.20669 1.0494 0.17018 1.913-0.0766 1.6408-0.19942m-1.0997-0.79903s-0.47786 0.1135-0.16923 0.15472c0.13032 0.0174 0.3901 0.0135 0.63208-7e-3 0.19776-0.0167 0.39633-0.0522 0.39633-0.0522s-0.0697 0.0299-0.12018 0.0643c-0.48525 0.12762-1.4227 0.0682-1.1528-0.0623 0.22824-0.11032 0.41381-0.0978 0.41381-0.0978m0.85721 0.47916c0.49329-0.25633 0.26521-0.50266 0.10602-0.46948-0.039 8e-3 -0.0564 0.0152-0.0564 0.0152s0.0145-0.0227 0.0421-0.0325c0.31494-0.11072 0.55715 0.32656-0.10166 0.49975 0 0 8e-3 -7e-3 0.01-0.0129"
+                    fill="#5382a1"
+                    stroke-width=".0070866"
+                />
+                <path
+                    d="m-42.958-135.13s0.27319 0.27328-0.25911 0.69351c-0.42685 0.33709-0.0973 0.5293-1.7e-4 0.7489-0.24916-0.2248-0.43201-0.4227-0.30934-0.60688 0.18005-0.27036 0.67885-0.40144 0.56862-0.83553"
+                    fill="#f8981d"
+                    stroke-width=".0070866"
+                />
+                <path
+                    d="m-43.47-132.5c0.47349 0.0303 1.2006-0.0168 1.2178-0.24086 0 0-0.0331 0.0849-0.39131 0.15239-0.40414 0.0761-0.90258 0.0672-1.1982 0.0184 1e-5 -1e-5 0.0605 0.0501 0.37172 0.07m-0.0776 0.85608c-0.0447 0.0387-0.0918 0.0605-0.13418 0.0605-0.0604 0-0.0931-0.0362-0.0931-0.0944 0-0.0629 0.035-0.10883 0.17531-0.10883h0.0519v0.14269m0.12326 0.13906v-0.43046c0-0.10996-0.0627-0.18252-0.21393-0.18252-0.0883 0-0.16561 0.0218-0.22846 0.0496l0.0181 0.0762c0.0495-0.0182 0.11354-0.0351 0.17642-0.0351 0.0871 0 0.12458 0.0351 0.12458 0.10759v0.0544h-0.0435c-0.21164 0-0.30711 0.0821-0.30711 0.20547 0 0.10642 0.0629 0.16691 0.18138 0.16691 0.0761 0 0.13298-0.0314 0.18612-0.0774l0.01 0.0653h0.0967zm0.41134 0h-0.15373l-0.185-0.60208h0.13424l0.1148 0.36992 0.0255 0.11125c0.0581-0.16085 0.0991-0.32404 0.11969-0.48117h0.13058c-0.035 0.19826-0.0979 0.41588-0.1861 0.60208m0.58969-0.13906c-0.0447 0.0387-0.092 0.0605-0.13434 0.0605-0.0603 0-0.0931-0.0362-0.0931-0.0944 0-0.0629 0.0351-0.10883 0.17539-0.10883h0.052v0.14269m0.12323 0.13906v-0.43046c0-0.10996-0.0629-0.18252-0.21391-0.18252-0.0883 0-0.1657 0.0218-0.22852 0.0496l0.0181 0.0762c0.0495-0.0182 0.11369-0.0351 0.17651-0.0351 0.087 0 0.12457 0.0351 0.12457 0.10759v0.0544h-0.0435c-0.21171 0-0.30714 0.0821-0.30714 0.20547 0 0.10642 0.0629 0.16691 0.18131 0.16691 0.0762 0 0.13301-0.0314 0.18623-0.0774l0.01 0.0653h0.0967zm-1.7332 0.10224c-0.0351 0.0513-0.0919 0.0919-0.15401 0.11485l-0.0609-0.0716c0.0473-0.0243 0.0878-0.0634 0.10669-0.1 0.0163-0.0325 0.0231-0.0743 0.0231-0.17436v-0.68736h0.13094v0.67795c0 0.13376-0.0107 0.1878-0.0458 0.24049"
+                    fill="#5382a1"
+                    stroke-width=".0070866"
+                />
+            </svg>
+        );
+    };
+
     return (
         <>
             <Hero />
@@ -227,7 +264,7 @@ const Home = () => {
                     Hover over each card to learn more about my proficiencies...
                 </i>
                 <div className="relative flex justify-between items-center flex-wrap">
-                    <span className="relative flex-1 h-96 max-w-sm rounded-xl m-0">
+                    <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
                         <TextDisplayCard
                             title="React"
                             text="I first began using React when I helped work on SplashDash (an analytics tool for marketing agencies) during my time at Develomark. My portfolio website is built using React and is my library of choice."
@@ -235,7 +272,7 @@ const Home = () => {
                             {ReactIcon()}
                         </TextDisplayCard>
                     </span>
-                    <span className="relative flex-1 h-96 max-w-sm rounded-xl m-0">
+                    <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
                         <TextDisplayCard
                             title="HTML/CSS/Javascript"
                             text="The classic trifecta. JavaScript was the first language I had ever learned. Before I moved onto any frameworks, I mastered these three things to give me a solid foundation to build upon. I've written websites using vanilla HTML/CSS/JavaScript mostly for experimentation as well as for some assignments."
@@ -243,12 +280,28 @@ const Home = () => {
                             {TrifectaIcon()}
                         </TextDisplayCard>
                     </span>
-                    <span className="relative flex-1 h-96 max-w-sm rounded-xl m-0">
+                    <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
                         <TextDisplayCard
                             title="PHP/MySQL"
                             text="When handling server-side requests on an Apache server, PHP is my go-to purely for its speed. I've used PHP and MySQL when I built a search engine and crawler for Develomark. I also made a mock security forum for my Computer Security course using PHP and MySQL."
                         >
                             {PHPMySQLLogo()}
+                        </TextDisplayCard>
+                    </span>
+                    <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
+                        <TextDisplayCard
+                            title="Java"
+                            text="I was taught Java throughout the Computer Science Honors program at CCSU. My most notable Java project was for my Design Patterns course where I worked with 2 others to build a discord racing bot. The bot allows you to race other people in the server and lets you buy, upgrade, and repair cars."
+                        >
+                            {JavaLogo()}
+                        </TextDisplayCard>
+                    </span>
+                    <span className="relative flex-1 h-96 max-w-sm rounded-xl mb-6" style={{ minWidth: "24rem" }}>
+                        <TextDisplayCard
+                            title="Java"
+                            text="I was taught Java throughout the Computer Science Honors program at CCSU. My most notable Java project was for my Design Patterns course where I worked with 2 others to build a discord racing bot. The bot allows you to race other people in the server and lets you buy, upgrade, and repair cars."
+                        >
+                            {JavaLogo()}
                         </TextDisplayCard>
                     </span>
                 </div>
