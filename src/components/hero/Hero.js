@@ -27,7 +27,7 @@ const Hero = () => {
             <div
                 style={{ height: `${containerHeight}px` }}
                 ref={containerRef}
-                className="relative block bg-redsand-500 overflow-hidden"
+                className="relative block bg-gradient-to-r from-redsand-500 to-fadedsky-500 overflow-hidden"
             >
                 <Backdrop containerHeight={containerHeight} text={"SABIA"} />
             </div>

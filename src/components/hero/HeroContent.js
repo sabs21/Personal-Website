@@ -16,8 +16,12 @@ const HeroContent = () => {
     return (
         <div className="relative block w-80 md:w-160 h-auto mx-auto rounded-xl backdrop-blur border-4 border-white dark:border-black py-6 px-8 md:px-16">
             <div className="absolute block w-full h-full top-0 left-0 bg-white dark:bg-black opacity-40"></div>
-            <div className="absolute bg-white dark:bg-black w-28 h-28 md:w-40 md:h-40 rounded-full -top-14 -left-14 md:-top-20 md:-left-20 overflow-hidden p-1">
-                <img className="relative block w-full h-full rounded-full" src="website-headshot.jpg" />
+            <div className="absolute bg-white dark:bg-black rounded-full -top-14 -left-14 md:-top-20 md:-left-20 overflow-hidden">
+                <img
+                    className="relative block w-28 h-28 md:w-40 md:h-40 p-1 rounded-full"
+                    src="website-headshot.jpg"
+                    alt="Nick wearing ski gear"
+                />
             </div>
             <div className="relative flex justify-center items-center w-full h-auto">{quoteIcon()}</div>
             <div className="relative block font-extralight font-body w-full text-xl md:text-3xl text-redsand-900 dark:text-redsand-50">
