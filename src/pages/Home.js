@@ -612,6 +612,7 @@ const Home = () => {
                 <ImageProject
                     number="02."
                     src="sunset.jpg"
+                    alt="Preview of the Nantucket sunset scene I created in Three.JS"
                     title="Nantucket Sunset"
                     text="When I was in high school, I would go up to Cape Cod with my mom and best friend to soak in the nautical atmosphere. Nantucket was just a ferry ride away, so one time we decided to visit and roam around the island. After a day of art gallaries, traversing the small windy roads, and endulging in lobster, we were walking back to the ferry to head back to Hyannis when I saw this gorgeous sunset over the docks. This sunset is forever locked in my mind, one which takes me back to Nantucket and high school in general whenever I think of it. As for what I used to make this, I used Three.JS and used glsl/webgl to create shaders for the hurricane lantern. This scene was originally going to be the homepage for my website, but I decided to go this route instead."
                 >
