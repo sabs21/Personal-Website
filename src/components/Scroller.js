@@ -76,8 +76,10 @@ const Scroller = ({ children, gap, speed, reverse }) => {
 
         // On resize, recalculate width
         window.addEventListener("resize", (e) => {
-            setContainerWidth(containerRef.current.offsetWidth);
-            setItemWidth(itemRef.current.offsetWidth);
+            if (containerRef.current !== null && itemRef.current !== null) {
+                setContainerWidth(containerRef.current.offsetWidth);
+                setItemWidth(itemRef.current.offsetWidth);
+            }
             //console.log("containerRef width", containerRef.current.offsetWidth);
             //console.log("itemRef width", itemRef.current.offsetWidth);
         });

@@ -3,6 +3,9 @@ import Hero from "../components/hero/Hero";
 import { DarkModeContext } from "../components/DarkModeContext";
 import TextDisplayCard from "../components/TextDisplayCard";
 import VideoProject from "../components/VideoProject";
+import ImageProject from "../components/ImageProject";
+import { Link } from "react-router-dom";
+import Sunset from "./sunset/Sunset";
 
 const Home = () => {
     const { darkMode } = useContext(DarkModeContext);
@@ -603,19 +606,31 @@ const Home = () => {
                 </h1>
                 <VideoProject
                     number="01."
-                    videoSrc="media/Kcc_Demo_Final.webm"
+                    src="media/Kcc_Demo_Final.webm"
                     title="Kevin's Community Center"
                     text="The team I was on used Next.JS when working on a volunteer management system for Kevin's Community Center. On top of having many shortcuts (like routing pages using a folder structure), Next.JS offered a gentle introduction into React style development which kept team velocity high."
                 />
-                <VideoProject
+                <ImageProject
                     number="02."
-                    videoSrc="media/Forum_492_Final.webm"
+                    src="sunset.jpg"
+                    title="Nantucket Sunset"
+                    text="When I was in high school, I would go up to Cape Cod with my mom and best friend to soak in the nautical atmosphere. Nantucket was just a ferry ride away, so one time we decided to visit and roam around the island. After a day of art gallaries, traversing the small windy roads, and endulging in lobster, we were walking back to the ferry to head back to Hyannis when I saw this gorgeous sunset over the docks. This sunset is forever locked in my mind, one which takes me back to Nantucket and high school in general whenever I think of it. As for what I used to make this, I used Three.JS and used glsl/webgl to create shaders for the hurricane lantern. This scene was originally going to be the homepage for my website, but I decided to go this route instead."
+                >
+                    <Link to="/sunset">
+                        <button className="relative flex justify-center mt-8 mb-6 float-right items-center w-48 h-16 bg-redsand-600 hover:bg-redsand-800 text-white font-display font-bold text-xl rounded-md shadow-md">
+                            See the Sunset
+                        </button>
+                    </Link>
+                </ImageProject>
+                <VideoProject
+                    number="03."
+                    src="media/Forum_492_Final.webm"
                     title="Forum 492"
                     text="I created this forum as my final project in my Computer Security course. Everything was made from scratch to allow myself to fully understand how to make a secure login system, so no libraries or npm packages here. Throughout the project, I explored how to avoid common web security issues such as Cross Site Scripting (XSS) and SQL Injection. I also familiarized myself with security concepts like intrusion detection, secure protocols, and public key cryptography as well as respected security info sources such as OWASP and Talos."
                 />
                 <VideoProject
-                    number="03."
-                    videoSrc="media/Search_Engine_Demo_Final.webm"
+                    number="04."
+                    src="media/Search_Engine_Demo_Final.webm"
                     title="Duda Search Engine"
                     text="I built a crawler to populate a database full of info which the search functionality could then use to effectively search the database. The backend of the crawler and search capabilities were built using PHP and a MySQL database while the front end was built using HTML/CSS/Javascript. The crawler detects paragraphs and relates each paragraph to its respective header text, then stores what it finds into the database. Also, the crawler makes note of every single word it comes across and how many times it gets repeated in a page. This is done to guage how related a certain page is to the search query in a simple way and also doubles as a way to spell check the user without the need of a dictionary. The search functionality will also generate suggestions based off of previously searched searches made by other users. This search engine was built to crawl and work with Duda built websites only and I am the sole developer of the engine."
                 />
