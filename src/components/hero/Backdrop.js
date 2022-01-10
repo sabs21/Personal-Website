@@ -9,59 +9,13 @@ const Backdrop = ({ containerHeight, text }) => {
 
     const addScroller = (key, style, reverse = false) => {
         return (
-            <div key={key} className="relative h-28" style={style}>
+            <div key={key} className="relative h-auto" style={style}>
                 <Scroller gap={0} speed={1} reverse={reverse}>
-                    <svg
-                        width="380"
-                        height="210"
-                        viewBox="0 0 380 200"
-                        className="relative inline-block w-auto h-auto text-9xl font-display font-black pointer-events-none"
-                    >
-                        <defs>
-                            <mask id="upright" x="0" y="0" width="390" height="200">
-                                <rect x="0" y="0" width="380" height="200" fill="#fff"></rect>
-                                <text textAnchor="left" x="0" y="102">
-                                    {text}
-                                </text>
-                            </mask>
-                        </defs>
-                        <rect
-                            x="0"
-                            y="0"
-                            width="380"
-                            height="200"
-                            mask="url(#upright)"
-                            fill={darkMode ? "#0A1A1D" : "#EDF8F9"}
-                            fillOpacity="1"
-                        ></rect>
-                    </svg>
-                    <svg
-                        width="393"
-                        height="210"
-                        viewBox="0 0 390 200"
-                        className={`${
-                            darkMode ? "outlinedTextDark" : "outlinedText"
-                        } relative inline-block w-auto h-auto text-9xl font-display font-black pointer-events-none`}
-                        style={{ transform: "rotate(180deg) translateY(93px)" }}
-                    >
-                        <defs>
-                            <mask id="upsidedown" x="0" y="0" width="400" height="115">
-                                <rect x="0" y="0" width="400" height="115" fill="#fff"></rect>
-                                <text textAnchor="left" x="0" y="102" fill="transparent" stroke="black" strokeWidth="1">
-                                    {text}
-                                </text>
-                            </mask>
-                        </defs>
-                        <rect
-                            x="0"
-                            y="0"
-                            width="390"
-                            height="200"
-                            mask="url(#upsidedown)"
-                            fill={darkMode ? "#0A1A1D" : "#EDF8F9"}
-                            fillOpacity="1"
-                        ></rect>
-                    </svg>
+                    <img
+                        src={darkMode ? "sabia_dark.png" : "sabia_light.png"}
+                        className="relative block w-160 h-28"
+                        alt="Nick Sabia Text"
+                    ></img>
                 </Scroller>
             </div>
         );
@@ -89,7 +43,7 @@ const Backdrop = ({ containerHeight, text }) => {
         let elements = [];
         let scrollerStyle = {
             transform: `rotate(-20deg) translate(-75px, -600px)`,
-            width: "200%",
+            width: "140%",
         };
         let key = 1; // NOTE: Key "starts" at 1 here since there is already an element which will begin with key 0.
         for (let totalRows = findOptimalAmountOfRows(containerHeight, itemHeight) + extra; key <= totalRows; key++) {
@@ -129,60 +83,14 @@ const Backdrop = ({ containerHeight, text }) => {
             <div
                 className="relative w-full h-28"
                 ref={itemRef}
-                style={{ transform: "rotate(-20deg) translate(-75px, -600px)", width: "200%" }}
+                style={{ transform: "rotate(-20deg) translate(-75px, -600px)", width: "140%" }}
             >
-                <Scroller gap={10} speed={1}>
-                    <svg
-                        width="380"
-                        height="210"
-                        viewBox="0 0 380 200"
-                        className="relative inline-block w-auto h-auto text-9xl font-display font-black pointer-events-none"
-                    >
-                        <defs>
-                            <mask id="upright" x="0" y="0" width="390" height="200">
-                                <rect x="0" y="0" width="380" height="200" fill="#fff"></rect>
-                                <text textAnchor="left" x="0" y="102">
-                                    {text}
-                                </text>
-                            </mask>
-                        </defs>
-                        <rect
-                            x="0"
-                            y="0"
-                            width="380"
-                            height="200"
-                            mask="url(#upright)"
-                            fill={darkMode ? "#0A1A1D" : "#EDF8F9"}
-                            fillOpacity="1"
-                        ></rect>
-                    </svg>
-                    <svg
-                        width="393"
-                        height="200"
-                        viewBox="0 0 394 200"
-                        className={`${
-                            darkMode ? "outlinedTextDark" : "outlinedText"
-                        } relative inline-block w-auto h-auto text-9xl font-display font-black pointer-events-none -ml-1`}
-                        style={{ transform: "rotate(180deg) translateY(93px)" }}
-                    >
-                        <defs>
-                            <mask id="upsidedown" x="0" y="0" width="400" height="115">
-                                <rect x="0" y="0" width="400" height="115" fill="#fff"></rect>
-                                <text textAnchor="left" x="0" y="102" fill="transparent" stroke="black" strokeWidth="1">
-                                    {text}
-                                </text>
-                            </mask>
-                        </defs>
-                        <rect
-                            x="0"
-                            y="0"
-                            width="390"
-                            height="200"
-                            mask="url(#upsidedown)"
-                            fill={darkMode ? "#0A1A1D" : "#EDF8F9"}
-                            fillOpacity="1"
-                        ></rect>
-                    </svg>
+                <Scroller gap={0} speed={1}>
+                    <img
+                        src={darkMode ? "sabia_dark.png" : "sabia_light.png"}
+                        className="relative block w-160 h-28"
+                        alt="Nick Sabia Text"
+                    ></img>
                 </Scroller>
             </div>
             {appendScrollers(containerHeight, itemHeight, 7)}

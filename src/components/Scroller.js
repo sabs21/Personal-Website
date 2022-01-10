@@ -39,7 +39,7 @@ const Scroller = ({ children, gap, speed, reverse }) => {
 
         let items = 2; // We need at least 3 items in the scroller to achieve the desired scrolling effect. We already have the reference item, so we just add 2 items here to ensure we reach the needed 3 items.
         for (
-            let availableWidth = containerWidth - (itemWidth + spacing);
+            let availableWidth = containerWidth - (itemWidth + spacing) * items;
             availableWidth > 0;
             availableWidth -= itemWidth + spacing
         ) {
