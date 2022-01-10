@@ -13,7 +13,7 @@ const Backdrop = ({ containerHeight, text }) => {
                 <Scroller gap={0} speed={1} reverse={reverse}>
                     <img
                         src={darkMode ? "sabia_dark.png" : "sabia_light.png"}
-                        className="relative block w-160 h-28"
+                        className="relative block w-176 h-28"
                         alt="Nick Sabia Text"
                     ></img>
                 </Scroller>
@@ -88,7 +88,7 @@ const Backdrop = ({ containerHeight, text }) => {
                 <Scroller gap={0} speed={1}>
                     <img
                         src={darkMode ? "sabia_dark.png" : "sabia_light.png"}
-                        className="relative block w-160 h-28"
+                        className="relative block w-176 h-28"
                         alt="Nick Sabia Text"
                     ></img>
                 </Scroller>

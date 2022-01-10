@@ -1,11 +1,10 @@
-import { useState, useEffect, useRef, useContext } from "react";
+import { useContext } from "react";
 import Hero from "../components/hero/Hero";
 import { DarkModeContext } from "../components/DarkModeContext";
 import TextDisplayCard from "../components/TextDisplayCard";
 import VideoProject from "../components/VideoProject";
 import ImageProject from "../components/ImageProject";
 import { Link } from "react-router-dom";
-import Sunset from "./sunset/Sunset";
 
 const Home = () => {
     const { darkMode } = useContext(DarkModeContext);

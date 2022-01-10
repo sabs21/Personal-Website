@@ -9,6 +9,7 @@ module.exports = {
                 128: "32rem",
                 144: "36rem",
                 160: "40rem",
+                176: "44rem",
             },
             flex: {
                 2: "2 2 0%",
