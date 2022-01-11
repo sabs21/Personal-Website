@@ -17,6 +17,23 @@ module.exports = {
                 4: "4 4 0%",
                 5: "5 5 0%",
             },
+            animation: {
+                "spin-fast": "spin 500ms linear infinite",
+                "spin-slow": "spin 2s linear infinite",
+                "reverse-spin": "reverse-spin 1s linear infinite",
+                "reverse-spin-slow": "reverse-spin 2s linear infinite",
+                "reverse-spin-very-slow": "reverse-spin 3750ms linear infinite",
+            },
+            keyframes: {
+                "reverse-spin": {
+                    from: {
+                        transform: "rotate(360deg)",
+                    },
+                    to: {
+                        transform: "rotate(0deg)",
+                    },
+                },
+            },
         },
         colors: {
             transparent: "transparent",
