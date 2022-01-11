@@ -153,9 +153,6 @@ const Sunset = () => {
             sunlight.position.set(0, 4, -10);
             sunlight.target.position.set(0, 0, 0);
             scene.add(sunlight);
-
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.02);
-            //scene.add(ambientLight);
         }
 
         // Lamp lighting
@@ -164,7 +161,6 @@ const Sunset = () => {
             const intensity = 2;
             const lampLight = new THREE.PointLight(color, intensity, 2);
             lampLight.position.set(-1.25, 2.13, -1.77);
-            //scene.add( lampLight );
         }
 
         {
@@ -1132,7 +1128,7 @@ const Sunset = () => {
         const callback = function (mutationsList, observer) {
             for (const mutation of mutationsList) {
                 //console.log(parseInt(shipWheelElem.getAttribute("totalLoaded")));
-                if (parseInt(shipWheelElem.getAttribute("totalLoaded")) != totalLoaded) {
+                if (parseInt(shipWheelElem.getAttribute("totalLoaded")) !== totalLoaded) {
                     totalLoaded = parseInt(shipWheelElem.getAttribute("totalLoaded"));
                     // Expand the gradient to display that the scene is loading
                     shipWheelElem.style =
