@@ -43,7 +43,7 @@ const Backdrop = ({ containerHeight, text }) => {
         let elements = [];
         let scrollerStyle = {
             transform: `rotate(-20deg) translate(-75px, -600px)`,
-            width: "140%",
+            width: "200%",
         };
         let key = 1; // NOTE: Key "starts" at 1 here since there is already an element which will begin with key 0.
         for (let totalRows = findOptimalAmountOfRows(containerHeight, itemHeight) + extra; key <= totalRows; key++) {
@@ -83,7 +83,7 @@ const Backdrop = ({ containerHeight, text }) => {
             <div
                 className="relative w-full h-28"
                 ref={itemRef}
-                style={{ transform: "rotate(-20deg) translate(-75px, -600px)", width: "140%" }}
+                style={{ transform: "rotate(-20deg) translate(-75px, -600px)", width: "200%" }}
             >
                 <Scroller gap={0} speed={1}>
                     <img
