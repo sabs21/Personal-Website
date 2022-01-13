@@ -13,7 +13,8 @@ const BottledWater = () => {
     const gl = useThree((state) => state.gl);
     const waterNormals = useLoader(THREE.TextureLoader, Water_Normal_2);
     waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
-    const geom = useMemo(() => new THREE.PlaneGeometry(0.2, 0.45, 48, 48), []);
+    // new THREE.PlaneGeometry(0.2, 0.45, 48, 48)
+    const geom = useMemo(() => new THREE.PlaneGeometry(0.17, 0.45, 48, 48), []);
     /*const config = useMemo(
         () => ({
             color: "#77a6ff",
@@ -34,7 +35,8 @@ const BottledWater = () => {
             sunDirection: new THREE.Vector3(),
             sunColor: 0xffffff,
             waterColor: 0x001e0f,
-            distortionScale: 1,
+            distortionScale: 0.02,
+            roundness: 0.2,
             fog: false,
             format: gl.encoding,
             size: 2,
@@ -47,7 +49,7 @@ const BottledWater = () => {
             ref={ref}
             args={[geom, config]}
             rotation={[-Math.PI / 2, 0, THREE.Math.degToRad(280)]}
-            position={[0.69, 2.023, -1.71]}
+            position={[0.7, 2.0225, -1.71]}
         />
     );
 };
