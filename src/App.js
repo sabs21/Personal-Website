@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.js";
 import Minecraft from "./pages/Minecraft.js";
 import Sunset from "./pages/sunset/Sunset.js";
+import BuildupScene from "./pages/sunset/BuildupScene";
 import DarkModeContextProvider from "./components/DarkModeContext.js";
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home />}></Route>
                         <Route path="/minecraft" element={<Minecraft />}></Route>
-                        <Route path="/sunset" element={<Sunset />}></Route>
+                        <Route path="/sunset" element={<BuildupScene />}></Route>
                     </Routes>
                     <Footer />
                 </div>

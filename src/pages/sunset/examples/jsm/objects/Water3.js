@@ -160,7 +160,7 @@ class Water3 extends Mesh {
 
         //
 
-        this.onBeforeRender = function (renderer, scene, camera) {
+        /*this.onBeforeRender = function (renderer, scene, camera) {
             updateTextureMatrix(camera);
             updateFlow();
 
@@ -173,7 +173,7 @@ class Water3 extends Mesh {
             refractor.onBeforeRender(renderer, scene, camera);
 
             scope.visible = true;
-        };
+        };*/
     }
 }
 
