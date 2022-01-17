@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import * as THREE from "three";
-import { Canvas, useFrame, useThree, extend } from "@react-three/fiber";
-import { Html, OrbitControls } from "@react-three/drei";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Html, useProgress } from "@react-three/drei";
 import SunsetScene from "./SunsetScene";
 import { Sky } from "./examples/jsm/objects/Sky.js";
 //import { Sky } from "@react-three/drei";
@@ -10,10 +10,9 @@ import BottledWater from "./examples/jsm/objects/BottledWater";
 import Clouds from "./examples/jsm/objects/Clouds";
 import "./stylesheet.css";
 
-//extend({ Water3 });
-
 const BuildupScene = () => {
     const NAV_BAR_HEIGHT = 80;
+
     let screenDimensions = {
         width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
         height:
@@ -21,12 +20,18 @@ const BuildupScene = () => {
             NAV_BAR_HEIGHT,
     };
 
-    THREE.DefaultLoadingManager.onLoad = function () {
-        console.log("Loading Complete!");
-    };
-
-    THREE.DefaultLoadingManager.onProgress = function (url, itemsLoaded, itemsTotal) {
-        console.log("Loading file: " + url + ".\nLoaded " + itemsLoaded + " of " + itemsTotal + " files.");
+    // The loading screen to show as the materials load in.
+    const Loader = () => {
+        //const { active, progress, errors, item, loaded, total } = useProgress();
+        const { progress } = useProgress();
+        return (
+            <Html>
+                <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center bg-gray-800">
+                    <div id="shipWheel"></div>
+                    <div className="relative text-xl text-fadedsky-100">Loading the Sunset ({progress}%)</div>
+                </div>
+            </Html>
+        );
     };
 
     const SunsetCamera = () => {
@@ -59,29 +64,22 @@ const BuildupScene = () => {
                 <SunsetCamera />
                 {/*<CameraWobble />*/}
                 {/*<OrbitControls />*/}
-                <CameraWobble />
-                <Suspense
-                    fallback={
-                        <Html>
-                            <h1>Loading sunset...</h1>
-                        </Html>
-                    }
-                >
+                <Suspense fallback={<Loader />}>
+                    <CameraWobble />
+                    <directionalLight color={0xffa29c} intensity={0.2} position={[0, 4, -10]} />
+                    <pointLight color={0xff9a02} intensity={2} distance={2} position={[-1.25, 2.13, -1.77]} />
+                    <Sky
+                        distance={100000}
+                        inclination={0}
+                        azimuth={180}
+                        elevation={0}
+                        mieCoefficient={0.005}
+                        mieDirectionalG={0.7}
+                        rayleigh={3}
+                        turbidity={10}
+                        sunPosition={[0, 2, -10000]}
+                    />
                     <SunsetScene />
-                </Suspense>
-                {/*(<Sky distance={450000} sunPosition={[5, 1, 8]} inclination={0} azimuth={0.25} />*/}
-                <Sky
-                    distance={100000}
-                    inclination={0}
-                    azimuth={180}
-                    elevation={0}
-                    mieCoefficient={0.005}
-                    mieDirectionalG={0.7}
-                    rayleigh={3}
-                    turbidity={10}
-                    sunPosition={[0, 2, -10000]}
-                />
-                <Suspense fallback={null}>
                     <Ocean />
                     <BottledWater />
                     <Clouds
@@ -90,8 +88,6 @@ const BuildupScene = () => {
                         scale={[0.27, 0.1, 0.1]}
                     />
                 </Suspense>
-                <directionalLight color={0xffa29c} intensity={0.2} position={[0, 4, -10]} />
-                <pointLight color={0xff9a02} intensity={2} distance={2} position={[-1.25, 2.13, -1.77]} />
             </Canvas>
         </div>
     );

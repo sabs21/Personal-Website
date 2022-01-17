@@ -9,17 +9,24 @@ const Hero = () => {
     const [containerHeight, setContainerHeight] = useState(bodyHeight > minHeight ? bodyHeight : minHeight);
     const containerRef = useRef(null);
 
+    const handleResize = (e) => {
+        if (containerRef) {
+            setContainerHeight(containerRef.current.offsetHeight);
+        }
+    };
+
     // Handle calculation of heights upon load and upon resizing
     useEffect(() => {
-        if (containerHeight > 0) {
+        if (containerRef && containerHeight > 0) {
             // Set initial widths
             setContainerHeight(containerRef.current.offsetHeight);
 
             // On resize, recalculate width
-            window.addEventListener("resize", (e) => {
-                setContainerHeight(containerRef.current.offsetHeight);
-            });
+            window.addEventListener("resize", handleResize);
         }
+
+        // Returning anything from useEffect happens when the component is unmounted
+        return window.removeEventListener("resize", handleResize);
     }, []); //empty dependency array so it only runs once at render
 
     return (

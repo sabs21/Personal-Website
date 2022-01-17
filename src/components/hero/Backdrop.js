@@ -53,19 +53,27 @@ const Backdrop = ({ containerHeight, text }) => {
         return elements;
     };
 
+    const handleResize = (e) => {
+        if (itemRef) {
+            setItemHeight(itemRef.current.offsetHeight);
+        }
+    };
+
     // Handle calculation of heights upon load and upon resizing
     useEffect(() => {
         // Set initial widths
-        setItemHeight(itemRef.current.offsetHeight);
+        if (itemRef) {
+            setItemHeight(itemRef.current.offsetHeight);
+        }
+
         //console.log("containerRef offsetHeight", containerRef.current.offsetHeight);
         //console.log("itemRef offsetHeight", itemRef.current.offsetHeight);
 
         // On resize, recalculate width
-        window.addEventListener("resize", (e) => {
-            setItemHeight(itemRef.current.offsetHeight);
-            //console.log("containerRef offsetHeight", containerRef.current.offsetHeight);
-            //console.log("itemRef offsetHeight", itemRef.current.offsetHeight);
-        });
+        window.addEventListener("resize", handleResize);
+
+        // Returning anything from useEffect happens when the component is unmounted
+        return window.removeEventListener("resize", handleResize);
     }, []); //empty dependency array so it only runs once at render
 
     return (
