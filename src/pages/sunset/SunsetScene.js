@@ -55,6 +55,9 @@ const generateUV2 = (geometry) => {
 const SunsetScene = () => {
     const group = useRef();
     const { nodes, materials } = useGLTF(Scene);
+    const ship = useRef();
+    let shipRotation = [0, 0, 0];
+    let shipPosition = [0.73, 2.053, -1.7];
 
     // Bottle CubeCamera reflection setup
     const [bottleRenderTarget] = useState(
@@ -76,7 +79,11 @@ const SunsetScene = () => {
 
     const bands = useRef();
 
-    useFrame(({ gl, scene }) => {
+    useFrame(({ gl, scene, clock }) => {
+        ship.current.position.y = Math.cos(clock.getElapsedTime()) * 0.0025 + shipPosition[1];
+        ship.current.rotation.x = Math.sin(clock.getElapsedTime()) * 0.06;
+        ship.current.rotation.y = Math.cos(clock.getElapsedTime()) * 0.04;
+
         bottle.current.visible = false;
         bottleCubeCamera.current.update(gl, scene);
         bottle.current.visible = true;
@@ -384,7 +391,14 @@ const SunsetScene = () => {
             <mesh castShadow receiveShadow geometry={nodes.Holder.geometry}>
                 <meshLambertMaterial map={holderDiffuse()} />
             </mesh>
-            <mesh castShadow receiveShadow geometry={generateUV2(nodes.Ship.geometry)} position={[0.73, 2.053, -1.7]}>
+            <mesh
+                ref={ship}
+                castShadow
+                receiveShadow
+                geometry={generateUV2(nodes.Ship.geometry)}
+                position={shipPosition}
+                rotation={shipRotation}
+            >
                 <meshLambertMaterial map={shipDiffuse()} lightMap={shipLightmap()} lightMapIntensity={1} />
             </mesh>
             <mesh castShadow receiveShadow geometry={nodes.Tabletop.geometry}>
