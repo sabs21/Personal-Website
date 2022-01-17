@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-//import * as THREE from "./three.module.js";
+import * as THREE from "three";
 import { Canvas, useFrame, useThree, extend } from "@react-three/fiber";
 import { Html, OrbitControls } from "@react-three/drei";
 import SunsetScene from "./SunsetScene";
@@ -7,6 +7,7 @@ import { Sky } from "./examples/jsm/objects/Sky.js";
 //import { Sky } from "@react-three/drei";
 import Ocean from "./examples/jsm/objects/Ocean";
 import BottledWater from "./examples/jsm/objects/BottledWater";
+import Clouds from "./examples/jsm/objects/Clouds";
 import "./stylesheet.css";
 
 //extend({ Water3 });
@@ -36,17 +37,13 @@ const BuildupScene = () => {
 
     const CameraWobble = () => {
         useFrame((state) => {
-            state.camera.position.x = state.camera.position.x + Math.sin(state.clock.getElapsedTime() * 3) / 10960;
-            state.camera.position.y = state.camera.position.y + Math.sin(state.clock.getElapsedTime() * 1.4) / 20980;
-            state.camera.position.z = state.camera.position.z + Math.cos(state.clock.getElapsedTime() * 2) / 10940;
+            state.camera.position.x = state.camera.position.x + Math.sin(state.clock.getElapsedTime() * 3) / 8960;
+            state.camera.position.y = state.camera.position.y + Math.sin(state.clock.getElapsedTime() * 1.4) / 16980;
+            state.camera.position.z = state.camera.position.z + Math.cos(state.clock.getElapsedTime() * 2) / 8940;
             state.camera.updateProjectionMatrix();
         });
         return null;
     };
-
-    //const Ocean = () => {
-
-    //}
 
     return (
         <div className="relative block w-full" style={{ height: screenDimensions.height + "px" }}>
@@ -54,7 +51,7 @@ const BuildupScene = () => {
                 <SunsetCamera />
                 {/*<CameraWobble />*/}
                 {/*<OrbitControls />*/}
-                <OrbitControls />
+                <CameraWobble />
                 <Suspense
                     fallback={
                         <Html>
@@ -79,6 +76,11 @@ const BuildupScene = () => {
                 <Suspense fallback={null}>
                     <Ocean />
                     <BottledWater />
+                    <Clouds
+                        position={[0.722, 2.177, -1.705]}
+                        rotation={[0, THREE.Math.degToRad(10), 0]}
+                        scale={[0.27, 0.1, 0.1]}
+                    />
                 </Suspense>
                 <directionalLight color={0xffa29c} intensity={0.2} position={[0, 4, -10]} />
                 <pointLight color={0xff9a02} intensity={2} distance={2} position={[-1.25, 2.13, -1.77]} />
