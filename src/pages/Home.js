@@ -40,7 +40,7 @@ const Home = () => {
                         Languages &amp; Technologies
                     </h3>
                     <i className="relative block text-lg font-body text-fadedsky-700 dark:text-fadedsky-300 mb-4">
-                        Hover over each card to learn more about my proficiencies...
+                        Hover over (or tap) each card to learn more about my proficiencies...
                     </i>
                     <div className="relative flex justify-center lg:justify-around items-center flex-wrap">
                         <span
