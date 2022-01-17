@@ -33,7 +33,7 @@ const Scroller = ({ children, gap, speed, reverse }) => {
     // Calculates how many items are just enough to fill the container width-wise. This does not take into consideration any rotations applied.
     const findOptimalAmountOfItems = (containerWidth, itemWidth, spacing) => {
         if (containerWidth <= 0 || itemWidth <= 0) {
-            console.warn("Unable to find optimal amount of items to fit. Either containerWidth = 0 or itemWidth = 0.");
+            //console.warn("Unable to find optimal amount of items to fit. Either containerWidth = 0 or itemWidth = 0.");
             return 0;
         }
 

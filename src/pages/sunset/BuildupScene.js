@@ -21,6 +21,14 @@ const BuildupScene = () => {
             NAV_BAR_HEIGHT,
     };
 
+    THREE.DefaultLoadingManager.onLoad = function () {
+        console.log("Loading Complete!");
+    };
+
+    THREE.DefaultLoadingManager.onProgress = function (url, itemsLoaded, itemsTotal) {
+        console.log("Loading file: " + url + ".\nLoaded " + itemsLoaded + " of " + itemsTotal + " files.");
+    };
+
     const SunsetCamera = () => {
         useThree(({ camera }) => {
             //let aspect = screenDimensions.width / screenDimensions.height; // the canvas default

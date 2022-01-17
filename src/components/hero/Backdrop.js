@@ -24,7 +24,7 @@ const Backdrop = ({ containerHeight, text }) => {
     // Calculates how many rows are just enough to fill the container. This does not take into consideration any rotations applied.
     const findOptimalAmountOfRows = (containerHeight, itemHeight) => {
         if (containerHeight <= 0 || itemHeight <= 0) {
-            console.warn("Unable to find optimal amount of rows to add. Either containerHeight = 0 or itemHeight = 0.");
+            //console.warn("Unable to find optimal amount of rows to add. Either containerHeight = 0 or itemHeight = 0.");
             return 0;
         }
         //console.log("containerHeight", containerHeight);
