@@ -326,8 +326,8 @@ const SunsetScene = () => {
 
     return (
         <group ref={group}>
-            <Cloud diffuse={Cloud1_Diffuse} position={[-870, 550, -4999]} scale={[1800, 650]} />
-            <Cloud diffuse={Cloud2_Diffuse} position={[2600, 750, -5000]} scale={[3000, 700]} />
+            <Cloud diffuse={Cloud1_Diffuse} position={[-870, 550, -4799]} scale={[1800, 650]} />
+            <Cloud diffuse={Cloud2_Diffuse} position={[2600, 750, -4700]} scale={[3000, 700]} />
             <Cloud diffuse={Cloud2_Diffuse} position={[-2500, 950, -5001]} scale={[2200, 1100]} />
             <Cloud diffuse={Cloud3_Diffuse} position={[300, 1100, -5002]} scale={[3000, 500]} />
             <mesh castShadow receiveShadow geometry={nodes.Barrel.geometry}>
