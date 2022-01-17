@@ -168,14 +168,27 @@ const Home = () => {
                         </button>
                     </Link>
                 </ImageProject>
-                <VideoProject
+                <ImageProject
                     number="03."
+                    src="planetary_doom.jpg"
+                    alt="Preview of Planetary Doom, a game me and three others built using Unity"
+                    title="Planetary Doom"
+                    text="Planetary Doom is a 2D roguelike where you're a ship whose purpose is to save earth from incoming threats. Use scrap from fallen enemies to improve your ship's systems and face larger onslaughts of asteroids and enemy ships. This project was completed in a month using both agile practices and Unity. The team consisted of myself and three others."
+                >
+                    <a href="https://maciox55.itch.io/planetary-doom" target="_blank">
+                        <button className="relative flex justify-center mt-8 mb-6 float-right items-center w-48 h-16 bg-redsand-600 hover:bg-redsand-800 text-white font-display font-bold text-xl rounded-md shadow-md">
+                            Play the Game
+                        </button>
+                    </a>
+                </ImageProject>
+                <VideoProject
+                    number="04."
                     src="media/Forum_492_Final.webm"
                     title="Forum 492"
                     text="I created this forum as my final project in my Computer Security course. Everything was made from scratch to allow myself to fully understand how to make a secure login system, so no libraries or npm packages here. Throughout the project, I explored how to avoid common web security issues such as Cross Site Scripting (XSS) and SQL Injection. I also familiarized myself with security concepts like intrusion detection, secure protocols, and public key cryptography as well as respected security info sources such as OWASP and Talos."
                 />
                 <VideoProject
-                    number="04."
+                    number="05."
                     src="media/Search_Engine_Demo_Final.webm"
                     title="Duda Search Engine"
                     text="I built a crawler to populate a database full of info which the search functionality could then use to effectively search the database. The backend of the crawler and search capabilities were built using PHP and a MySQL database while the front end was built using HTML/CSS/Javascript. The crawler detects paragraphs and relates each paragraph to its respective header text, then stores what it finds into the database. Also, the crawler makes note of every single word it comes across and how many times it gets repeated in a page. This is done to guage how related a certain page is to the search query in a simple way and also doubles as a way to spell check the user without the need of a dictionary. The search functionality will also generate suggestions based off of previously searched searches made by other users. This search engine was built to crawl and work with Duda built websites only and I am the sole developer of the engine."
