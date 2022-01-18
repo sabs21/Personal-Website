@@ -22,13 +22,32 @@ const BuildupScene = () => {
 
     // The loading screen to show as the materials load in.
     const Loader = () => {
-        //const { active, progress, errors, item, loaded, total } = useProgress();
-        const { progress } = useProgress();
+        const { active, progress, errors, item, loaded, total } = useProgress();
+        console.log(
+            "active",
+            active,
+            "Progress",
+            progress,
+            "errors",
+            errors,
+            "item",
+            item,
+            "loaded",
+            loaded,
+            "total",
+            total
+        );
+        //const { progress } = useProgress();
         return (
-            <Html>
-                <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center bg-gray-800">
-                    <div id="shipWheel"></div>
-                    <div className="relative text-xl text-fadedsky-100">Loading the Sunset ({progress}%)</div>
+            <Html
+                className="absolute top-0 left-0 w-full h-full flex justify-center items-center bg-gray-800"
+                transform={false}
+                wrapperClass={"theThreeCanvas"}
+            >
+                <div className="relative top-0 left-0 w-full h-full justify-center items-center bg-gray-800">
+                    <div id="shipWheel" className="m-auto mt-10"></div>
+                    <div className="relative text-xl text-center mt-4 text-fadedsky-100">Arriving at the docks</div>
+                    <div className="relative text-lg text-center mt-1 italic text-fadedsky-100">Please stand by...</div>
                 </div>
             </Html>
         );
