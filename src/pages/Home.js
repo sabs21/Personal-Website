@@ -163,7 +163,7 @@ const Home = () => {
                     text="When I was in high school, I would go up to Cape Cod with my mom and best friend to soak in the nautical atmosphere. Nantucket was just a ferry ride away, so one time we decided to visit and roam around the island. After a day of art gallaries, traversing the small windy roads, and endulging in lobster, we were walking back to the ferry to head back to Hyannis when I saw this gorgeous sunset over the docks. This sunset is forever locked in my mind, one which takes me back to Nantucket and high school in general whenever I think of it. As for what I used to make this, I used Three.JS and used glsl/webgl to create shaders for the hurricane lantern. This scene was originally going to be the homepage for my website, but I decided to go this route instead."
                 >
                     <Link to="/sunset">
-                        <button className="relative flex justify-center mt-8 mb-6 float-right items-center w-48 h-16 bg-redsand-600 hover:bg-redsand-800 text-white font-display font-bold text-xl rounded-md shadow-md">
+                        <button className="relative flex justify-center mt-8 mb-6 float-right items-center w-full lg:w-48 h-16 bg-redsand-600 hover:bg-redsand-800 text-white font-display font-bold text-xl rounded-md shadow-md">
                             See the Sunset
                         </button>
                     </Link>
@@ -176,7 +176,7 @@ const Home = () => {
                     text="Planetary Doom is a 2D roguelike where you're a ship whose purpose is to save earth from incoming threats. Use scrap from fallen enemies to improve your ship's systems and face larger onslaughts of asteroids and enemy ships. This project was completed in a month using both agile practices and Unity. The team consisted of myself and three others."
                 >
                     <a href="https://maciox55.itch.io/planetary-doom" target="_blank">
-                        <button className="relative flex justify-center mt-8 mb-6 float-right items-center w-48 h-16 bg-redsand-600 hover:bg-redsand-800 text-white font-display font-bold text-xl rounded-md shadow-md">
+                        <button className="relative flex justify-center mt-8 mb-6 float-right items-center w-full lg:w-48 h-16 bg-redsand-600 hover:bg-redsand-800 text-white font-display font-bold text-xl rounded-md shadow-md">
                             Play the Game
                         </button>
                     </a>
@@ -194,7 +194,7 @@ const Home = () => {
                     text="Get your helmet and your car, it's time to start racing! Enter into hourly races and race with others in your channel. Use winnings to upgrade your car or buy a new one from one of four dealerships. In your downtime, train your driver to be an unstoppable force on the track. This was created by myself and two others during our Design Patterns course."
                 >
                     <a href="https://github.com/sabs21/discord-racing-bot/releases" target="_blank">
-                        <button className="relative flex justify-center mt-8 mb-6 float-right items-center w-48 h-16 bg-redsand-600 hover:bg-redsand-800 text-white font-display font-bold text-xl rounded-md shadow-md">
+                        <button className="relative flex justify-center mt-8 mb-6 float-right items-center w-full lg:w-48 h-16 bg-redsand-600 hover:bg-redsand-800 text-white font-display font-bold text-xl rounded-md shadow-md">
                             Get the Bot
                         </button>
                     </a>

@@ -15,7 +15,7 @@ const Footer = () => {
                     <BiggerGear className="absolute top-5 left-3 w-72 h-72 fill-current animate-reverse-spin-very-slow" />
                     <SmallerGear className="absolute top-0 left-56 w-40 h-40 fill-current animate-spin-slow" />
                 </div>
-                <h1 className="relative block text-4xl md:text-7xl w-full text-center md:text-left md:w-auto font-display font-bold text-fadedsky-900 dark:text-fadedsky-50">
+                <h1 className="relative block text-4xl lg:text-7xl w-full text-center lg:text-left lg:w-auto font-display font-bold text-fadedsky-900 dark:text-fadedsky-50">
                     Let's Build Something.
                 </h1>
                 <div className="relative flex h-16 justify-end items-center">
